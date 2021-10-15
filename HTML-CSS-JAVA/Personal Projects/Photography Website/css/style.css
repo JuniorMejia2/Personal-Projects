@@ -1,60 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+/* Navigation bar */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252a;
+    font-family: 'Inter', sans-serif;
 }
 
-li, a, button{
-    font-family: "Inter", sans-serif ;
-    font-weight: 400;
-    font-size: 16px;
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url('../images/bluemiata.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 200px;
+}
+.nav_links{
+    flex: 1;
+    text-align: right;
+}
+.nav_links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav_links ul li a{
     color: white;
     text-decoration: none;
+    font-size: 20px;
 }
 
-header{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 30px 10%;
+.nav_links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background:lightskyblue;
+    display: block;
+    margin: auto;  
+    transition: 0.2s;
 }
 
-.logo {
-    cursor: pointer;
-    margin-right: auto;
+.nav_links ul li:hover::after{
+    width: 100%;
 }
 
-.Nav_Links{
-    list-style: none;
+.text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
 
-.Nav_Links li {
+.text-box h1{
+    font-size: 62px;
+}
+
+.text-box p{
+    margin: 10px 0px 40px;
+    font-size: 14px;
+    color:white;
+}
+
+.hero-btn{
     display: inline-block;
-    padding: 0px 20px;
-}
-
-.Nav_Links li a {
-    transition: all 0.3 ease 0s;
-}
-
-.Nav_Links li a:hover {
-    color: #0088a9;
-}
-
-button{
-    margin-left: 20px;
-    padding: 9px 25px;
-    background-color: rgba(0,136,169,1);
-    border: none;
-    border-radius: 50px;
+    text-decoration: none;
+    color:white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
     cursor: pointer;
-    transition: all 0.3 ease 0s;
 }
 
-button :hover{
-    background-color: rgba(0,136,169,0.8);
+.hero-btn:hover{
+    border: 1px solid lightskyblue;
+    background: lightskyblue;
+    transition: 0.5s;
 }
+
+@media (max-width: 700px) {
+    .text-box h1{
+        font-size: 62px;
+    }
+    .nav_links ul li{
+        display: block;
+    }
+    .nav_links{
+        position: absolute;
+        background: lightskyblue;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+    }
+}
+
 
