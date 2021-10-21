@@ -48,7 +48,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background:lightskyblue;
+    background: #3366CC;
     display: block;
     margin: auto;  
     transition: 0.2s;
@@ -91,8 +91,8 @@ nav img{
 }
 
 .hero-btn:hover{
-    border: 1px solid lightskyblue;
-    background: lightskyblue;
+    border: 1px solid #3366CC;
+    background: #3366CC;
     transition: 0.5s;
 }
 
@@ -105,7 +105,7 @@ nav img{
     }
     .nav_links{
         position: absolute;
-        background: lightskyblue;
+        background: #3366CC;
         height: 100vh;
         width: 200px;
         top: 0;
