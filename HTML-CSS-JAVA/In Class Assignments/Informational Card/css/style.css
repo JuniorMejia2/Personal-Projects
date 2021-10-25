@@ -1,1 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter" sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    background-image: url("../images/BackGround.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card{
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card{
+    background-color: white;
+    padding: 60px 40px;
+}
+
+.Profile-Picture{
+    display: inline-block;
+    padding: 8px;
+}
 
