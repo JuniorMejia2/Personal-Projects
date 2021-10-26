@@ -9,28 +9,51 @@
 }
 
 body{
-    height: 100vh;
-    background-image: url("../images/BackGround.jpg") no-repeat center;
+    background-image: url("../images/BackGround.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.profile-card{
-    width: 400px;
+img{
+    max-width: 300px;
+    margin: auto;
+    display: block;
+    margin-top: 50px;
+    border-radius: 30px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius:  0;
+}
+
+.container{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
     text-align: center;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.card{
     background-color: white;
-    padding: 60px 40px;
+    border-radius: 30px;
 }
 
-.Profile-Picture{
-    display: inline-block;
-    padding: 8px;
+h1{
+    font-family: "Inter";
+    font-weight: 600;
 }
 
+h2{
+    font-family: "Inter";
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+}
+
+h4{
+    font-family: "Inter";
+    font-weight: 400;
+    margin-top: 5px;
+    text-align: center;
+}
+
+p{
+    font-family: "Inter";
+    font-weight: 400;
+    text-align: center;
+}
