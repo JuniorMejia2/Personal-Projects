@@ -15,18 +15,20 @@ body{
 }
 
 img{
-    max-width: 300px;
+    max-width: 500px;
+    max-height: 300px;
     margin: auto;
     display: block;
     margin-top: 50px;
     border-radius: 30px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius:  0;
+    border-radius: 50%;
 }
 
 .container{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 500px;
     margin: auto;
     text-align: center;
     background-color: white;
@@ -42,18 +44,24 @@ h2{
     font-family: "Inter";
     font-weight: 600;
     margin-top: 10px;
-    text-align: center;
-}
-
-h4{
-    font-family: "Inter";
-    font-weight: 400;
-    margin-top: 5px;
-    text-align: center;
+    text-align: left;
+    color: darkblue;
+    margin: 10px 0 0 15px;
 }
 
 p{
     font-family: "Inter";
     font-weight: 400;
-    text-align: center;
+    text-align: left;
+    margin: 10px 0 0 30px;
+}
+
+i{
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container{
+    margin-bottom: 200px;
 }
