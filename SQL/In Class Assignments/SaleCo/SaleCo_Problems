@@ -1,0 +1,32 @@
+1.	Create a query to produce the total purchase per invoice, generating the results shown below, sorted by invoice number. The invoice total is the sum of the product purchases in the LINE that corresponds to the 
+
+        SELECT LINE.INV_NUMBER, ROUND(SUM(LINE.LINE_UNITS*LINE_PRICE),2) AS 'Invoice total'
+        FROM DBO.LINE
+        GROUP BY LINE.INV_NUMBER;
+
+2.  Find the total value of the product inventory. The results are shown below.
+
+        SELECT SUM (p_QOH*P_PRICE) 'Total Value Of inventory'
+        FROM DBO.PRODUCT;
+
+3.  Find the total value of the product inventory. The results are shown below.
+
+        SELECT P_DESCRIPT, P_QOH, P_PRICE, P_QOH * P_PRICE AS 'Subtotal'
+        FROM PRODUCT
+        ORDER BY SUBTOTAL DESC;
+
+4.  Write a query to count the number of invoices.
+
+        SELECT COUNT (INV_NUMBER) FROM DBO.INVOICE;
+
+5.  Write a query to count the number of customers with a balance of more than $500.
+
+        SELECT COUNT (CUS_BALANCE) FROM DBO.CUSTOMER WHERE CUS_BALANCE > '500';
+
+6.  Generate a listing of all purchases made by the customers. Sort the results by customer code, invoice number, and product description.
+
+        SELECT INV_NUMBER, CUS_CODE, P_DESCRIPT FROM DBO.INVOICE, DBO.PRODUCT ORDER BY CUS_CODE, INV_NUMBER, P_DESCRIPT;
+
+7.  Use a query to show the invoices and invoice totals. Sort the results by customer code.
+
+        SELECT CUS_CODE, INVOICE.INV_NUMBER, SUM (LINE_UNITS * LINE_PRICE) AS "Invoice Total" FROM INVOICE JOIN LINE ON INVOICE.INV_NUMBER = LINE.INV_NUMBER GROUP BY CUS_CODE, INVOICE.INV_NUMBER;

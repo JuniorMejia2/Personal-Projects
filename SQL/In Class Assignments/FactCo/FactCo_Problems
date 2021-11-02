@@ -1,0 +1,57 @@
+1.	Write a query that displays the book title, cost and year of publication for every book in the system. Sort the results by book title.
+
+        SELECT BOOK_TITLE, BOOK_COST, BOOK_YEAR
+        FROM DBO.BOOK
+        ORDER BY BOOK_TITLE;
+
+2.	Write a query to display the checkout number, checkout date, and due date for every book that has been checked out sorted by checkout number. A picture of the results is below. –
+
+        SELECT CHECK_NUM, CHECK_OUT_DATE, CHECK_DUE_DATE
+        FROM DBO.CHECKOUT
+        ORDER BY CHECK_NUM;
+
+3.	Write a query to display the book number, book title, and subject for every book sorted by book number. A picture of the results is below. –
+
+        SELECT BOOK_NUM, BOOK_TITLE AS 'TITLE', BOOK_SUBJECT AS 'Subject As Book'
+        FROM DBO.BOOK
+        ORDER BY BOOK_NUM;
+
+4.	Write a query to display the checkout number, book number, and checkout date of all books checked out before April 5, 2017 sorted by checkout number. A picture of the results is below.
+
+        SELECT CHECK_NUM, BOOK_NUM, CHECK_OUT_DATE
+        FROM DBO.CHECKOUT
+        WHERE CHECK_OUT_DATE < '2017-05-04';
+
+5.	Write a query to display the number of books in the FACT system. A picture of the results is below.
+
+        SELECT COUNT (BOOK_TITLE) AS 'Number of books'
+        FROM DBO.BOOK;
+
+6.	Write a query to display the author last name, author first name, and book number for each book written by that author. Sort the results by author last name, first name, and then book number. A picture of the results is below.
+
+        SELECT AU_LNAME, AU_FNAME, C.BOOK_NUM
+        FROM DBO.AUTHOR AS A JOIN DBO.WRITES AS W ON A.AU_ID=W.AU_ID
+        JOIN DBO.BOOK AS B ON N.BOOK_NUM=W.BOOK_NUM
+        ORDER BY AU_LNAME, AU_FNAME, C.BOOK_NUM;
+
+7.	Write a query to display the book number, title, author last name, author first name, patron ID, last name, and patron type for all books currently checked out to a patron. Sort the results by book title. A picture of the results is below.
+
+        SELECT B.BOOK_NUM, BOOK_TITLE, AU_LNAME, AU_FNAME, A.PAT_ID, PAT_LANEM, PAT_TYPE 
+        FROM DBO.PATRON AS P JOIN DBO.BOOK AS B ON P.PAT_ID=B.PAT_ID
+        JOIN WRITES AS W ON W.BOOK_NUM=B.BOOK_NUM
+        JOIN AUTHOR AS A ON A.AU_ID=W.AU_ID
+        ORDER BY BOOK_TITLE;
+
+8.	Write a query to display the book number, title, and number of times each book has been checked out. Include books that have never been checked out. Sort the results in descending order by the number of times checked out and then by title. A picture of the results is below.
+
+        SELECT A.BOOK_NUM, BOOK_TITLE, COUNT(*) AS "Times Checked Out"
+        FROM DOB.BOOK AS B JOIN DBO.CHECKOUT AS C ON B.BOOK_NUM=C.BOOK_NUM
+        GROUP BY B.BOOK_NUM, B.BOOK_TITLE
+        ORDER BY B.BOOK_NUM, BOOK_TITLE desc;
+
+9.	 Write a query to display the different years in which books have been published. Include each year only once and sort the results by year. A picture of the results is below.
+
+        SELECT DISTINC BOOK_YEAR 
+        FROM DBO.BOOK
+        ORDER BY BOOK_YEAR;
+
